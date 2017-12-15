@@ -17,5 +17,5 @@ checkouts/
 target/
 examples/petrol-examples.iml
 examples/resources/js
-resources
+/resources
 
