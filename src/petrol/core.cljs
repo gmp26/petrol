@@ -25,7 +25,7 @@
 (defprotocol Message
   (process-message [message app]
                    "Given a message, take the current app state and
-                   return the new one. In essense this is a reducing
+                   return the new one. In essence this is a reducing
                    function."))
 
 (defprotocol EventSource

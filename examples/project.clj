@@ -12,12 +12,32 @@
                  [petrol "0.1.4"]
                  [reagent "0.7.0"]
                  [bidi "2.1.2"]
-                 [com.cemerick/url "0.1.1"]
+                 ;[com.cemerick/url "0.1.1"]
                  [kibu/pushy "0.3.8"]
                  [cljs-http "0.1.38"]]
 
   :plugins [[lein-cljsbuild "1.1.7"]
-            [lein-figwheel "0.5.14"]]
+            ;[lein-figwheel "0.5.14"]
+
+            ]
+
+  :source-paths ["src" "script"]
+
+  :profiles
+  {:dev
+   {:dependencies [
+                   [binaryage/devtools "0.9.8"]
+                   [figwheel-sidecar "0.5.14"]
+                   [com.cemerick/piggieback "0.2.2"]
+                   [org.clojure/tools.nrepl "0.2.10"]]
+    :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
+
+    :plugins      [[lein-doo "0.1.8"]]
+    }}
+
+  :clean-targets ^{:protect false} ["resources/public/js"
+                                    "target"
+                                    "test/js"]
 
   :cljsbuild {:builds {:counter {:source-paths ["src"]
                                  :figwheel {:on-jsload "petrol-examples.counter.core/reload-hook"}

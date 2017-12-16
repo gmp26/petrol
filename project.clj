@@ -12,7 +12,7 @@
                  ]
 
   :plugins [[lein-cljsbuild "1.1.7"]
-            [lein-figwheel "0.5.14"] ; enable this for emacs/cider
+            [lein-figwheel "0.5.14"]
             ]
 
   :cljsbuild {:builds {:petrol {:source-paths ["src"]
